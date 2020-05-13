@@ -33,6 +33,23 @@ public class NumberToWord {
     public static String spellNumber(long number) {
 
         StringBuilder numInWord = new StringBuilder();
+
+        numInWord.append( convertNumberUnitToWord((int) (number / 10000000), "Crore "));
+
+
+        numInWord.append(convertNumberUnitToWord((int) ((number / 100000) % 100), "Lakh "));
+
+
+        numInWord.append(convertNumberUnitToWord((int) ((number / 1000) % 100), "Thousand "));
+
+
+        numInWord.append(convertNumberUnitToWord((int) ((number / 100) % 10), "Hundred "));
+
+        if (number > 100 && number % 100 > 0) {
+            numInWord.append("and ");
+        }
+
+
         numInWord.append(convertNumberUnitToWord((int) (number % 100), ""));
 
         return numInWord.toString();
