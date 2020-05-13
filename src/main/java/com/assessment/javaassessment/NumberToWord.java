@@ -1,4 +1,7 @@
 package com.assessment.javaassessment;
+
+import java.util.Scanner;
+
 public class NumberToWord {
     static String ones[] = {"", "One ", "Two ", "Three ", "Four ",
             "Five ", "Six ", "Seven ", "Eight ",
@@ -57,10 +60,8 @@ public class NumberToWord {
 
 
     public static void main(String[] args) {
-
-        long number = 12;
-
-
+        Scanner scanner = new Scanner(System.in);
+        long number = scanner.nextLong();
         System.out.println(spellNumber(number));
 
     }
