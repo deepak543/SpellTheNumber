@@ -2,7 +2,16 @@ package com.assessment.javaassessment;
 
 import java.util.Scanner;
 
+/**
+ * A class that spells the given Number in words.
+ * Example :- an input 12 yields Twelve as output
+ * @author Deepak Selvakumar - dd.deepak06@gmail.com
+ * https://github.com/deepak543/SpellTheNumber
+ */
 public class NumberToWord {
+    /**
+     * The Ones string array that stores numbers in words till nineteen
+     */
     static String ones[] = {"", "One ", "Two ", "Three ", "Four ",
             "Five ", "Six ", "Seven ", "Eight ",
             "Nine ", "Ten ", "Eleven ", "Twelve ",
@@ -12,12 +21,22 @@ public class NumberToWord {
     };
 
 
+    /**
+     * The Tens string array that stores tens string till ninety
+     */
     static String tens[] = {"", "", "Twenty ", "Thirty ", "Forty ",
             "Fifty ", "Sixty ", "Seventy ", "Eighty ",
             "Ninety "
     };
 
 
+    /**
+     * Convert number unit to word string.
+     *
+     * @param number the number to be converted
+     * @param s      the unit string
+     * @return the converted string
+     */
     static String convertNumberUnitToWord(int number, String s) {
         StringBuilder word = new StringBuilder();
         if (number > 19) {
@@ -33,6 +52,12 @@ public class NumberToWord {
     }
 
 
+    /**
+     * Spell the given number in words as string.
+     *
+     * @param number the number
+     * @return the string
+     */
     public static String spellNumber(long number) {
 
         StringBuilder numInWord = new StringBuilder();
@@ -59,6 +84,11 @@ public class NumberToWord {
     }
 
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long number = scanner.nextLong();
